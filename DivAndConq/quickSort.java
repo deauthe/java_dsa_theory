@@ -4,43 +4,62 @@ package DivAndConq;
             //worst case-> 0(n^2)
     //space comp -> 0(1) crazy good
 public class quickSort {
+
+
     public static void printArray(int arr[]){
         for(int i=0;i<arr.length;i++){
             System.out.print(arr[i]+ " ");
         }
         System.out.println();
     }
+
+
     public static int partition(int arr[],int low,int high){
         int pivot= arr[arr.length-1];
         int i= low-1; //to make space for elements smaller than pivot 
         for(int j=low;j<high;j++){
-            if(arr[j]<=pivot){
+            if(arr[j]<=pivot){ //if this condition doesnt happen, j increases and i doesnt ;
                 i++;
-                //swap
+                //swap arr[j] with arr[i], j is always the one ahead;
                 int temp =arr[j];
                 arr[j] = arr[i];
                 arr[i] = temp;
             }
         }
         i++;
+        //swapping pivot(at index high) with ith element
         int temp = pivot;
         arr[high]=arr[i];
-        arr[i] = temp;
+        arr[i] = temp; //this takes the pivot into position
         return i;
 
     }
-    public static void quickSort(int arr[],int low,int high){
+// 2 5 3 8 9 4 1 7 10 6
+//2 5 3 4 8 9 1 7 10 6
+//2 5 3 4 1 8 9 10 6
+
+    public static void QuickSort(int arr[],int low,int high){
         if(low>=high){
             return;
         }
         int pivot=partition(arr, low, high);
-        quickSort(arr, low, pivot-1);
-        quickSort(arr, pivot+1, high);
+        QuickSort(arr, low, pivot-1);
+        QuickSort(arr, pivot+1, high);
     }
+
+
+
+
     public static void main(String args[]){
         int arr[] = {2,12,34,4,5,3,6,9};
         int n = arr.length ;
-        quickSort(arr, 0, n-1);
+        QuickSort(arr, 0, n-1);
+        printArray(arr);
     }
-    
+    //2 4 12 34 5 3 6 9
+    //2 4 5 12 34 3 6 9
+    //2 4 5 3 12 34 6 9 
+    //2 4 5 3 6 12 34 9
+    //2 4 5 3 6 9 12 34 
+    //  
 }

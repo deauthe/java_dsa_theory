@@ -9,6 +9,7 @@ public class bubbleSort {
         for(int turn = 0; turn< array.length ; turn++){
             for(int i= 0; i <array.length - 1 -turn; i++){
                 if(array[i]>array[i+1]){
+                    //swap current element with the next one
                     int temp = array[i];
                     array[i] = array[i+1] ;
                     array[i+1] = temp ; 
