@@ -2,7 +2,7 @@ package greedy;
 
 import java.util.Arrays;
 import java.util.Comparator;
-
+//find the least amount of coins used to get the number needed.
 public class indianCoins {
     public static void Denomination(int x,Integer coins[]){
         int count = 0;

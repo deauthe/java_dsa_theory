@@ -16,6 +16,7 @@ public class quickSort {
 
     public static int partition(int arr[],int low,int high){
         int pivot= arr[arr.length-1];
+        System.out.println("first pivot is:" + pivot);
         int i= low-1; //to make space for elements smaller than pivot 
         for(int j=low;j<high;j++){
             if(arr[j]<=pivot){ //if this condition doesnt happen, j increases and i doesnt ;
@@ -31,7 +32,9 @@ public class quickSort {
         int temp = pivot;
         arr[high]=arr[i];
         arr[i] = temp; //this takes the pivot into position
+        System.out.println("current pivot is:" + arr[i]);
         return i;
+        
 
     }
 // 2 5 3 8 9 4 1 7 10 6
@@ -43,6 +46,7 @@ public class quickSort {
             return;
         }
         int pivot=partition(arr, low, high);
+        System.out.println("current pivot is:" + pivot);
         QuickSort(arr, low, pivot-1);
         QuickSort(arr, pivot+1, high);
     }

@@ -40,6 +40,11 @@ public class duplicateParantheses{
 
     public static void main(String args[]){
         String str = "((a+b)+c)";
-        System.out.println(uselessBrackets(str));
+        if(uselessBrackets(str)){
+            System.out.println("no duplicates");
+        }
+        else{
+            System.out.println("duplicates exist");
+        }
     }
 }
