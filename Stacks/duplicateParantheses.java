@@ -39,7 +39,7 @@ public class duplicateParantheses{
 
 
     public static void main(String args[]){
-        String str = "((a+b)+c)";
+        String str = "((a+b)+c)(";
         if(uselessBrackets(str)){
             System.out.println("no duplicates");
         }
