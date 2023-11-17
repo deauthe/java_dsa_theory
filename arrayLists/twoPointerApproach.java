@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class twoPointerApproach {
     public static int twoPoint(ArrayList<Integer> heights){
         int right = heights.size()-1;

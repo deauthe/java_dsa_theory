@@ -1,4 +1,4 @@
-package backtraking;
+package backtracking;
 import java.util.*;
 
 public class keypad{

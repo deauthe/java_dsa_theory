@@ -70,16 +70,16 @@ public class sudoku {
 
         //checking for valid elements:
         if(sudoku[row][col]!=0){
-            //element is fixed
+            //element is fixed so go to next iteration
             return SudokuSolver(sudoku, nextrow, nextcol);
         }
 
         
-
+        //above conditions make sure that an element has to be placed here
         for(int digit = 1; digit<=9;digit++){
             if(isSafe(sudoku,row,col,digit)){
                 sudoku[row][col] = digit;           
-                if(SudokuSolver(sudoku, nextrow, nextcol)){
+                if(SudokuSolver(sudoku, nextrow, nextcol)){//if board can be solved 
                     return true;
                 }
                 else{
